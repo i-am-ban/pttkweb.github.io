@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dropdown Search Box</title>
+	<link rel="stylesheet" href="./css/search.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".default_option").click(function(){
+			  $(".dropdown ul").addClass("active");
+			});
+
+			$(".dropdown ul li").click(function(){
+			  var text = $(this).text();
+			  $(".default_option").text(text);
+			  $(".dropdown ul").removeClass("active");
+			});
+		});
+	</script>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="search_box">
+        <div class="dropdown">
+            <div class="default_option">Tìm kiếm</div>  
+            <ul>
+              <li>Tất cả</li>
+              <li>Theo danh mục</li>
+              <li>Theo tên</li>
+            </ul>
+        </div>
+        <div class="search_field">
+          <input type="text" class="input" placeholder="Tìm kiếm theo danh mục">
+          <i class="fas fa-search"></i>
+      </div>
+    </div>
+</div>
+
+</body>
+</html>
